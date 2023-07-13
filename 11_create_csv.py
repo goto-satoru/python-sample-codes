@@ -1,13 +1,13 @@
 import pandas as pd
 import numpy as np
 
-NUM_COLUMNS = 10_000
+NUM_COLUMNS = 140
 NUM_ROWS = 60
 # NUM_COLUMNS = 10
 # NUM_ROWS = 10
-CSV_FILENAME = "data10Kx60.csv"
+CSV_FILENAME = "data140x60.csv"
 
-idx = pd.date_range(start="2023-07-06 00:00:00+09:00", periods=NUM_ROWS, freq="1min")
+idx = pd.date_range(start="2023-07-13 00:00:00+09:00", periods=NUM_ROWS, freq="1min")
 
 # create sample CSV data
 column_names = [f"col{i:04d}" for i in range(NUM_COLUMNS)]

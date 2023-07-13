@@ -5,7 +5,7 @@ from cognite.client.data_classes import TimeSeries
 
 NUM_COLUMNS = 10_000
 NUM_ROWS = 60
-CSV_FILENAME = "data10Kx60.csv"
+CSV_FILENAME = "datapoints10Kx60.csv"
 # NUM_COLUMNS = 10
 # NUM_ROWS = 10
 # CSV_FILENAME = "data10x10.csv"

@@ -159,7 +159,6 @@ debug.log*
 state*.json
 
 *.pdf
-*.csv
 
 .DS_Store
 

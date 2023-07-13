@@ -1,4 +1,3 @@
-from msvcrt import LK_LOCK
 import os
 import sys
 import pandas as pd
@@ -10,7 +9,6 @@ from cognite.client.data_classes import TimeSeries
 def create_ts(csv_file):
     # read table info from the first row of CSV(UTF-8 encoded)
     table_info = pd.read_csv(csv_file, nrows=1, encoding='utf-8')
-    # print(table_info)
     for index, row in table_info.iterrows():
         print(f"Table name        {row['テーブル名']}")
         print(f"Table description {row['テーブル名称']}")
@@ -19,14 +17,13 @@ def create_ts(csv_file):
 
     # read column info from CSV(UTF-8 encoded) to pandas dataframe
     df = pd.read_csv(csv_file, skiprows=NUM_SKIP_ROWS, encoding='utf-8')
-
     for index, row in df.iterrows():
-        if row['タイムスタンプ'] == '〇':   # recommended to use true/false instead of 〇
+        if row['タイムスタンプ'] == '〇':
+        # if row['timestamp'] == 'TRUE':   # recommended to use true/false instead of 〇
             continue
         print(f"----- Column #{index}")
         print(f"external_id = {row['external_id']}")
         print(f"name        = {row['name']}")
-        # print(f"is_string   = {row['is_string'].lower()}")
         print(f"is_string   = {row['is_string'].lower()}")
 
         # create Timeseries if not exists
@@ -43,7 +40,7 @@ def create_ts(csv_file):
                     metadata={
                         'table_name': table_name,
                         'table_description': table_description,
-                    }
+                    } # type: ignore
                 ) # type: ignore
             )
 
