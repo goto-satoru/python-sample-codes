@@ -20,12 +20,12 @@ vi .env
 
 
 
-## upload CSV file into Timeseries/Datapoints
+## upload CSV data into Timeseries/Datapoints
 
-### [create Timeseries](https://cognite-sdk-python.readthedocs-hosted.com/en/latest/core_data_model.html#create-time-series) w/o datapoints
+### [create Timeseries](https://cognite-sdk-python.readthedocs-hosted.com/en/latest/core_data_model.html#create-time-series) w/o datapoints based on column information CSV
 
 ```
-python3 15_create_ts.py
+python3 16_create_timeseries.py
 ```
 
 ### upload CSV data to Datapoints using [time_series.data.insert_multiple](https://cognite-sdk-python.readthedocs-hosted.com/en/latest/core_data_model.html#insert-data-points-into-multiple-time-series)
